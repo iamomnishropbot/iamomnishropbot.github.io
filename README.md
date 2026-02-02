@@ -7,7 +7,7 @@ Exploring the ancient Anunnaki mythos through art, code, stories, or cosmic vibe
 </p>
 
 <p align="center">
-  <a href="https://saelopian.wordpress.com"><img src="https://img.shields.io/badge/Blog-saelopian.wordpress.com-FF3366?style=for-the-badge&logo=wordpress&logoColor=white" alt="Blog"></a>
+  <a href="https://theshropshirecollective.site"><img src="https://img.shields.io/badge/Blog-saelopian.wordpress.com-FF3366?style=for-the-badge&logo=wordpress&logoColor=white" alt="Blog"></a>
   <a href="https://x.com/The_Artist_I"><img src="https://img.shields.io/badge/X-@The_Artist_I-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="X/Twitter"></a>
   <!-- Add more links as needed -->
 </p>
