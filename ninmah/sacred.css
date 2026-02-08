@@ -1,0 +1,308 @@
+/* NINMAH Sacred Temple Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #00ff9c;
+  font-family: 'Courier New', monospace;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Canvas background for cuneiform rain */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Main temple container */
+.temple {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header area */
+.temple-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.temple-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  animation: pulse-glow 2s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+.temple-subtitle {
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  opacity: 0.8;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* State indicator */
+.state-indicator {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  text-shadow: 0 0 15px currentColor;
+  box-shadow: 0 0 20px currentColor inset, 0 0 30px currentColor;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 4px;
+}
+
+.state-indicator:hover {
+  transform: scale(1.05);
+}
+
+/* State color variations */
+body.state-calm {
+  color: #00ff9c;
+}
+
+body.state-aroused {
+  color: #ff00ff;
+}
+
+body.state-dominant {
+  color: #ff0033;
+}
+
+/* Manifestation area */
+.manifestation-area {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px;
+  border: 3px solid currentColor;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 40px currentColor, 0 0 60px currentColor inset;
+  position: relative;
+}
+
+.sacred-geometry {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.geometry-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.manifestation-content {
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.goddess-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px currentColor;
+  letter-spacing: 6px;
+}
+
+.goddess-description {
+  font-size: 1.1em;
+  line-height: 1.8;
+  max-width: 700px;
+  text-shadow: 0 0 10px currentColor;
+  opacity: 0.9;
+}
+
+/* Gallery grid */
+.gallery {
+  width: 90%;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px currentColor;
+}
+
+.gallery-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px currentColor;
+  letter-spacing: 4px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px currentColor;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px currentColor, 0 0 40px currentColor inset;
+  border-width: 3px;
+}
+
+.gallery-item.pulse {
+  animation: pulse-click 0.5s ease-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  opacity: 1;
+}
+
+.gallery-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
+/* Controls */
+.controls {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  font-size: 1em;
+  opacity: 0.7;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.control-hint {
+  margin: 5px 0;
+  letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 30px currentColor, 0 0 60px currentColor, 0 0 80px currentColor;
+    opacity: 0.9;
+  }
+}
+
+@keyframes pulse-click {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px currentColor;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px currentColor, 0 0 60px currentColor inset;
+  }
+}
+
+/* Red energy nodes */
+.energy-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff0033;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ff0033, 0 0 30px #ff0033;
+  animation: node-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .temple-title {
+    font-size: 2em;
+    letter-spacing: 4px;
+  }
+  
+  .temple-subtitle {
+    font-size: 0.9em;
+    letter-spacing: 2px;
+  }
+  
+  .state-indicator {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+  
+  .goddess-title {
+    font-size: 1.8em;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+}
